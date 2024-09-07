@@ -1,0 +1,12 @@
+What are the differences between int, long, long long, and short?
+An int is a 32-bit integer. A long is a 32-bit integer. A long long is a 64-bit integer. A short is a 16-bit integer. The specific ranges of these types varies, from 0 to x (see size_test.cpp)
+
+Between and unsigned and signed type?
+An unsigned type can only hold positive values, from zero to the maximum for that type. A signed type can hold negative values, from negative to positive maximums.
+Types are signed by default. Declaring an unsigned variable has some utility, in that it doubles its maximum. It is also useful for binary/bitwise operations, as 
+there is guaranteed no sign bit.
+
+Between a float and a double?
+A float is a single-precision floating-point value, with a minimum of 6 significant digits. 
+A double is a double-precision floating-point value, with a minimum of 10 significant digits.
+Of note: the double double can be used to measure the diameter of the observable universe (approx. 93 x 10^9 light-years, or 8.80 x 10^26 meters)

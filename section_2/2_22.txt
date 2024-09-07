@@ -1,0 +1,3 @@
+Assuming `p` is a pointer to `int`, explain the following code:
+if (p) // This checks to see whether `p` is a valid pointer and returns true if an address is assigned and false if its a `nullptr`.
+if (*p) // The checks the dereferenced integer value of `p` and returns false if the value is zero and true otherwise.

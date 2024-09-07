@@ -1,0 +1,7 @@
+Determine the types and values of each of the following variables:
+(a) int* ip, i, &r = i;
+`ip` is an uninitialized `int` pointer that holds an undefined value. `i` is an uninitialized `int` that holds an undefined value. `&r` is an `int` reference to `i`.
+(b) int i, *ip = 0; 
+`i` is an uninitialized `int` that holds an undefined value. `ip` is a null `int` pointer that points to `0`.
+(c) int* ip, ip2;
+`ip` is an uninitialized `int` pointer that holds an undefined value. `ip2` is an uninitialized `int` that holds an undefined value.

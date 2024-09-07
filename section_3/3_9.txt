@@ -1,0 +1,9 @@
+// What does the following program do? Is it valid? If not, why not?
+string s;
+cout << s[0] << endl;
+// If `s` contains at least one element, this program will print the first element of the string. However, if `s` is empty, the program invokes undefined behavior because `s[0]` tries to access a character that doesn't exist. To safely check the first element, you could use a condition like:
+if (!s.empty()) {
+    cout << s[0] << endl;
+} else {
+    cout << "String is empty" << endl;
+}

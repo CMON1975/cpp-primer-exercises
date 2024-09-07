@@ -1,0 +1,2 @@
+If the input values are all equal, there will only be one line of output tallying those values.
+If the input values are all different, there will be a line for each input value counting 1 occurrence each.

@@ -1,0 +1,15 @@
+Using the variables from 2_28.txt, which of the following assignments are legal? Explain why.
+
+From 2_28.txt:
+int i, *const cp; 
+int *p1, *const p2;
+const int ic, &r = ic; 
+const int *const p3;
+const int *p;
+
+(a) i = ic; This assignment is legal. `i` is a non-const `int` and `ic` is a `const int`. The value of `ic` can be assigned to `i` because you are not modifiying `ic`, and `i` is capable of holding the value of `ic`.
+(b) p1 = p3; This assignment is illegal. `p1` is a pointer to `int`, whereas `p3` is a `const` pointer to a `const int`. The type mismatch occurs because `p1` is a point to `int`, which can modify the value it points to, but `p3` points to a `const int`, which cannot be modified. You cannot assign a `const int*` to an `int*` without a `const_cast`, which is generally discouraged.
+(c) p1 = &ic; This assignment is illegal. `p1` is a pointer to `intt, but `ic` is a `const int`. You cannot assign the address of a `const int` to a pointer to `int` because `p1` could then be used to modify `ic`, which is not allowed.
+(d) p3 = &ic; This assignment is illegal because `p3` is a `const` pointer (meaning it cannot be changed to point to another address after it is initialized). Since `p3` is `const`, attempting to assign a new address to it results in a compilation error.
+(e) p2 = p1; This assignment is illegal because `p2` is a `const` pointer, meaning it cannot be reassigned after initialization. Attempting to assign `p1` to `p2` would be trying to change what `p2` points to, which is not allowed.
+(f) ic = *p3; This assignment is illegal because `ic` is a `const int`, meaning its value cannot be modified after it is initialized. `*p3` would evaluate to the value pointed to by `p3` (a `const int`), but since `ic` is `const`, the assignment is not allowed.

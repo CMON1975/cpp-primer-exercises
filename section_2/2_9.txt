@@ -1,0 +1,25 @@
+Explaing the following definitions. For those that are illegal, explain what's wrong and how to correct it.
+
+(a) std::cin >> int input_value;
+Illegal. You cannot declare a variable inline within an expression like this. The variable `input_value` needs to be declared seperately before using it with `std::cin`.
+Corrected code:
+int input_value;
+std::cin >> input_value;
+
+(b) int i = { 3.14 };
+Illegal (with narrowing). This is an example of list initialization in C++. When using list initialization (curly braces), the compiler checks for "narrowing conversions," which are conversions where there is a risk of data loss. Since `3.14` is a `double` and `i` is an `int`, this results in a narrowing conversion.
+Corrected code: If the intention is to store `3.14` in an integer, which truncates the decimal part, you can either use regular initialization or explicitly cast the value.
+int i = 3.14; // Regular initialization (allowed ,but loses the fractional part)
+// OR
+int = static_cast<int>(3.14); // Explicit cast (legal and explicit)
+
+(c) double salary = wage = 9999.99;
+Illegal (if `wage` is undeclared). The code assumes that `wage` is already declared. If `wage` is not declared, the code is illegal. The statement attempts to assign `9999.99` to `wage`, then assign the result to `salary`. If `wage` is declared as a `double`, the statement is legal.
+Corrected code: Ensure that `wage` is declared before this line.
+double wage;
+double salary = wage = 9999.99;
+
+(d) int i = 3.14;
+Legal (with truncation). This statement is legal in C++, but it involves a type conversion. The `double` value `3.14` will be truncated to the integer value `3`, losing the fractional part. This is a narrowing conversaion, but it is allowed in regular initialization.
+No correction needed unless the truncation is undesired. If you want to prevent this, you could use list initialization, which will trigger a compiler error:
+int i = { 3.14 }; // Triggers an error due to narrowing (see b above).
