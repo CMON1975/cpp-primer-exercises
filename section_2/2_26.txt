@@ -1,5 +1,0 @@
-Which of the following are legal? For those that are illegal, explain why.
-(a) const int buf; is illegal because a `const` must carry a defined value.
-(b) int cnt = 0; is a legal integer variable with the value `0`.
-(c) const int sz = cnt; is legal if we assume cnt has been defined by (b), making it a `const` with the integer value `0`.
-(d) ++cnt; ++sz; Only `++cnt` is legal because sz is a `const` and therefore immutable.

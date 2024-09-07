@@ -1,5 +1,0 @@
-Which of the following definitions, if any, are invalid. Why?
-(a) int ival = 1.01; Valid with truncation.
-(b) int &rval1 = 1.01; Invalid, because a reference to an `int` cannot be bound to a double (`1.01`); references must be bound to objects of the exact same type.
-(c) int &rval2 = ival; Valid, `&rval2` is bound to the object to which ival is bound.
-(d) int &rval3; Invalid, a reference must be initialized.

@@ -1,3 +1,0 @@
-Explain how whitespace characters are handled in the `string` input operator and in the `getline` function.
-* `>>` Operator: Reads up to the first whitespace character and ignores any leading whitespace.
-* `getline` Function: Reads until a newline (or a specified delimiter), including all whitespace characters, and stops at the delimiter without including it in the result.

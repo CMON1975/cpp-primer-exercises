@@ -1,7 +1,0 @@
-Why is the initialization of `p` legal but that of `lp` illegal?
-
-int i = 42;
-void *p = &i;
-long *lp = &i;
-
-A void pointer can hold any type of object. Pointer `lp` is declared type `long` and is attempting to initialize to an `int`; standard pointers can only be initialized to the same type.
